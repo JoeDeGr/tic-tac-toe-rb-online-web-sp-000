@@ -30,11 +30,7 @@ end
 
 def valid_move?(board, index)
   index =index.to_i
-   if index.between?(0,8) && ((board[index] == " ") || (board[index] == ""))
-       true
-     elsif (board[index] == " ") || (board[index] == "") || (board[index] == nil)
-       false
-   end
+   index.to_i.between?(0,8) && !position_taken?(board, index)
  end
 
  def turn(board)
